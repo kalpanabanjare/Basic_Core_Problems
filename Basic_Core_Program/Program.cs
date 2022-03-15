@@ -108,6 +108,19 @@ namespace Basic_Core_Program
             }
         }
 
+        public void QuotientAndRemainder()
+        {
+            Console.WriteLine("Enter Divident:");
+            int Divident = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Divisor:");
+            int Divisor = int.Parse(Console.ReadLine());
+            int Quotient = Divident / Divisor;
+            int Remainder = Divident % Divisor;
+            Console.WriteLine("Quotient = " + Quotient);
+            Console.WriteLine("Remainder = " + Remainder);
+            Console.ReadLine();
+        }
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter a number for your choice:");
@@ -116,6 +129,7 @@ namespace Basic_Core_Program
             Console.WriteLine("3 for power of tow");
             Console.WriteLine("4 for Harmonic number");
             Console.WriteLine("5 for Factor");
+            Console.WriteLine("6 for Quotient And Remainder");
             int Problem = Convert.ToInt32(Console.ReadLine());
             basicCoreProgram basicCoreProgram = new basicCoreProgram();
             switch (Problem)
@@ -134,6 +148,9 @@ namespace Basic_Core_Program
                     break;
                 case 5:
                     basicCoreProgram.Factor();
+                    break;
+                case 6:
+                    basicCoreProgram.QuotientAndRemainder();
                     break;
                 default:
                     Console.WriteLine("You enter invalid number");
