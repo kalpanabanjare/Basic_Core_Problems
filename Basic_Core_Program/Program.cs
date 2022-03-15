@@ -60,8 +60,19 @@ namespace Basic_Core_Program
                 {
                     Console.WriteLine("Invalid input");
                 }
-            }
-            return Year;
+            }            
+        }
+
+        public void PowerOfTwo()
+        {            
+                Console.Write("Enter Number :");
+                int number = int.Parse(Console.ReadLine());
+                for (int num = 0; num <= number; num++)
+                {
+                    int PowerOfTwo = (int)Math.Pow(2, num);
+                    Console.Write("2 to the Power of:" + num);
+                    Console.WriteLine("=" + PowerOfTwo);
+                }            
         }
     
         public static void Main(string[] args)
@@ -69,6 +80,7 @@ namespace Basic_Core_Program
             Console.WriteLine("Enter a number for your choice:");
             Console.WriteLine("1 for flip coin presentage");
             Console.WriteLine("2 for leap year");
+            Console.WriteLine("3 for power of tow");
             int Problem = Convert.ToInt32(Console.ReadLine());
             basicCoreProgram basicCoreProgram = new basicCoreProgram();
             switch (Problem)
@@ -79,6 +91,8 @@ namespace Basic_Core_Program
                 case 2:
                     basicCoreProgram.LeapYear();
                     break;
+                case 3:
+                    basicCoreProgram.PowerOfTwo();
                 default:
                     Console.WriteLine("You enter invalid number");
                     break;
