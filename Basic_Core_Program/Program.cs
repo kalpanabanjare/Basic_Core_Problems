@@ -134,6 +134,20 @@ namespace Basic_Core_Program
             Console.WriteLine("After swap Frist number= " + FristNum + " Second number= " + SecontNum);
         }
 
+        public void EvenOdd()
+        {
+            Console.WriteLine("Enter number:");
+            int Num = int.Parse(Console.ReadLine());
+            if (Num % 2 == 0)
+            {
+                Console.WriteLine("Number is even");
+            }
+            else
+            {
+                Console.WriteLine("Number is odd");
+            }
+        }
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter a number for your choice:");
@@ -144,6 +158,7 @@ namespace Basic_Core_Program
             Console.WriteLine("5 for Factor");
             Console.WriteLine("6 for Quotient And Remainder");
             Console.WriteLine("7 for Swap two Number");
+            Console.WriteLine("8 for Even and Odd");
             int Problem = Convert.ToInt32(Console.ReadLine());
             basicCoreProgram basicCoreProgram = new basicCoreProgram();
             switch (Problem)
@@ -168,6 +183,9 @@ namespace Basic_Core_Program
                     break;
                 case 7:
                     basicCoreProgram.SwapTeoNum();
+                    break;
+                case 8:
+                    basicCoreProgram.EvenOdd();
                     break;
                 default:
                     Console.WriteLine("You enter invalid number");
