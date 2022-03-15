@@ -150,31 +150,55 @@ namespace Basic_Core_Program
 
         public void VowelConsonant()
         {
-            Console.Write("check whether the input alphabet is a vowel or Consonant \n");         
+            Console.Write("check whether the input alphabet is a vowel or Consonant \n");
             Console.Write("Input an Alphabet (A-Z or a-z) : ");
-            char Alphabet = Convert.ToChar(Console.ReadLine().ToLower());            
+            char Alphabet = Convert.ToChar(Console.ReadLine().ToLower());
             switch (Alphabet)
             {
-                    case 'a':
-                        Console.WriteLine("The Alphabet is vowel");
-                        break;
-                    case 'i':
-                        Console.WriteLine("The Alphabet is vowel");
-                        break;
-                    case 'o':
-                        Console.WriteLine("The Alphabet is vowel");
-                        break;
-                    case 'u':
-                        Console.WriteLine("The Alphabet is vowel");
-                        break;
-                    case 'e':
-                        Console.WriteLine("The Alphabet is vowel");
-                        break;
-                    default:
-                        Console.WriteLine("The Alphabet is Consonant");
-                        break;
+                case 'a':
+                    Console.WriteLine("The Alphabet is vowel");
+                    break;
+                case 'i':
+                    Console.WriteLine("The Alphabet is vowel");
+                    break;
+                case 'o':
+                    Console.WriteLine("The Alphabet is vowel");
+                    break;
+                case 'u':
+                    Console.WriteLine("The Alphabet is vowel");
+                    break;
+                case 'e':
+                    Console.WriteLine("The Alphabet is vowel");
+                    break;
+                default:
+                    Console.WriteLine("The Alphabet is Consonant");
+                    break;
             }
         }
+
+        public void LargestAmongThreeNumbers()
+        {
+            Console.Write("Find the largest of three numbers:\n");
+            Console.Write("Input the 1st number :");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.Write("Input the  2nd number :");
+            int num2 = int.Parse(Console.ReadLine());
+            Console.Write("Input the 3rd  number :");
+            int num3 = int.Parse(Console.ReadLine());
+
+            if (num1 > num2 && num1 > num3)
+            {
+                Console.Write("The 1st Number is the greatest among three." + num1);
+            }
+            else if (num2 > num1 && num2 > num3)
+            {
+                Console.Write("The 2rd Number is the greatest among three." + num2);
+            }
+            else
+            {
+                Console.Write("The 3rd Number is the greatest among three." + num3);
+            }
+        }    
 
         public static void Main(string[] args)
         {
@@ -188,6 +212,7 @@ namespace Basic_Core_Program
             Console.WriteLine("7 for Swap two Number");
             Console.WriteLine("8 for Even and Odd");
             Console.WriteLine("9 for Vowel or Consonant");
+            Console.WriteLine("10 for Largest Among Three Numbers");
             int Problem = Convert.ToInt32(Console.ReadLine());
             basicCoreProgram basicCoreProgram = new basicCoreProgram();
             switch (Problem)
@@ -218,6 +243,9 @@ namespace Basic_Core_Program
                     break;
                 case 9:
                     basicCoreProgram.VowelConsonant();
+                    break;
+                case 10:
+                    basicCoreProgram.LargestAmongThreeNumbers();
                     break;
                 default:
                     Console.WriteLine("You enter invalid number");
