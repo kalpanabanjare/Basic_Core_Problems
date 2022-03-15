@@ -121,6 +121,19 @@ namespace Basic_Core_Program
             Console.ReadLine();
         }
 
+        public void SwapTeoNum()
+        {
+            Console.WriteLine("Enter Frist number:");
+            int FristNum = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Second number:");
+            int SecontNum = int.Parse(Console.ReadLine());
+            Console.WriteLine("Before swap Frist number = " + FristNum + " Second number= " + SecontNum);
+            FristNum = FristNum + SecontNum;
+            SecontNum = FristNum - SecontNum;
+            FristNum = FristNum - SecontNum;
+            Console.WriteLine("After swap Frist number= " + FristNum + " Second number= " + SecontNum);
+        }
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter a number for your choice:");
@@ -130,6 +143,7 @@ namespace Basic_Core_Program
             Console.WriteLine("4 for Harmonic number");
             Console.WriteLine("5 for Factor");
             Console.WriteLine("6 for Quotient And Remainder");
+            Console.WriteLine("7 for Swap two Number");
             int Problem = Convert.ToInt32(Console.ReadLine());
             basicCoreProgram basicCoreProgram = new basicCoreProgram();
             switch (Problem)
@@ -151,6 +165,9 @@ namespace Basic_Core_Program
                     break;
                 case 6:
                     basicCoreProgram.QuotientAndRemainder();
+                    break;
+                case 7:
+                    basicCoreProgram.SwapTeoNum();
                     break;
                 default:
                     Console.WriteLine("You enter invalid number");
