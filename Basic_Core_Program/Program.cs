@@ -75,33 +75,12 @@ namespace Basic_Core_Program
                 }            
         }
 
-        public void HarmonicNumber()
-        {
-            int num;
-            double Harmonic = 0.0;
-            Console.WriteLine("Calculate the harmonic series and their sum:");
-            Console.Write("Input the number of terms: ");
-            int Terms = int.Parse(Console.ReadLine());
-            for (num = 1; num <= Terms - 1; num++)
-            {
-                Console.Write("1/{0} + ", num);
-                Harmonic += 1 / (float)num;
-            }
-            if (num == Terms)
-            {
-                Console.Write("1/{0} ", num);
-                Harmonic += 1 / (float)num;
-            }
-            Console.WriteLine("\nthe Nth Harmonic Value. {0} terms : {1} ", num, Harmonic);
-        }
-
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter a number for your choice:");
             Console.WriteLine("1 for flip coin presentage");
             Console.WriteLine("2 for leap year");
             Console.WriteLine("3 for power of tow");
-            Console.WriteLine("4 for Harmonic Number");
             int Problem = Convert.ToInt32(Console.ReadLine());
             basicCoreProgram basicCoreProgram = new basicCoreProgram();
             switch (Problem)
@@ -114,6 +93,7 @@ namespace Basic_Core_Program
                     break;
                 case 3:
                     basicCoreProgram.PowerOfTwo();
+                    break;
                 default:
                     Console.WriteLine("You enter invalid number");
                     break;
