@@ -60,19 +60,19 @@ namespace Basic_Core_Program
                 {
                     Console.WriteLine("Invalid input");
                 }
-            }            
+            }
         }
 
         public void PowerOfTwo()
-        {            
-                Console.Write("Enter Number :");
-                int number = int.Parse(Console.ReadLine());
-                for (int num = 0; num <= number; num++)
-                {
-                    int PowerOfTwo = (int)Math.Pow(2, num);
-                    Console.Write("2 to the Power of:" + num);
-                    Console.WriteLine("=" + PowerOfTwo);
-                }            
+        {
+            Console.Write("Enter Number :");
+            int number = int.Parse(Console.ReadLine());
+            for (int num = 0; num <= number; num++)
+            {
+                int PowerOfTwo = (int)Math.Pow(2, num);
+                Console.Write("2 to the Power of:" + num);
+                Console.WriteLine("=" + PowerOfTwo);
+            }
         }
 
         public void HarmonicNumber()
@@ -96,7 +96,7 @@ namespace Basic_Core_Program
         }
 
         public void Factor()
-        {            
+        {
             Console.Write("Please enter your integer: ");
             int num = int.Parse(Console.ReadLine());
             for (int factor = 1; factor <= num; factor++)
@@ -148,6 +148,34 @@ namespace Basic_Core_Program
             }
         }
 
+        public void VowelConsonant()
+        {
+            Console.Write("check whether the input alphabet is a vowel or Consonant \n");         
+            Console.Write("Input an Alphabet (A-Z or a-z) : ");
+            char Alphabet = Convert.ToChar(Console.ReadLine().ToLower());            
+            switch (Alphabet)
+            {
+                    case 'a':
+                        Console.WriteLine("The Alphabet is vowel");
+                        break;
+                    case 'i':
+                        Console.WriteLine("The Alphabet is vowel");
+                        break;
+                    case 'o':
+                        Console.WriteLine("The Alphabet is vowel");
+                        break;
+                    case 'u':
+                        Console.WriteLine("The Alphabet is vowel");
+                        break;
+                    case 'e':
+                        Console.WriteLine("The Alphabet is vowel");
+                        break;
+                    default:
+                        Console.WriteLine("The Alphabet is Consonant");
+                        break;
+            }
+        }
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter a number for your choice:");
@@ -159,6 +187,7 @@ namespace Basic_Core_Program
             Console.WriteLine("6 for Quotient And Remainder");
             Console.WriteLine("7 for Swap two Number");
             Console.WriteLine("8 for Even and Odd");
+            Console.WriteLine("9 for Vowel or Consonant");
             int Problem = Convert.ToInt32(Console.ReadLine());
             basicCoreProgram basicCoreProgram = new basicCoreProgram();
             switch (Problem)
@@ -186,6 +215,9 @@ namespace Basic_Core_Program
                     break;
                 case 8:
                     basicCoreProgram.EvenOdd();
+                    break;
+                case 9:
+                    basicCoreProgram.VowelConsonant();
                     break;
                 default:
                     Console.WriteLine("You enter invalid number");
