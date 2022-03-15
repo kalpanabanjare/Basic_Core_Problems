@@ -95,6 +95,19 @@ namespace Basic_Core_Program
             Console.WriteLine("\nthe Nth Harmonic Value. {0} terms : {1} ", num, Harmonic);
         }
 
+        public void Factor()
+        {            
+            Console.Write("Please enter your integer: ");
+            int num = int.Parse(Console.ReadLine());
+            for (int factor = 1; factor <= num; factor++)
+            {
+                if (num % factor == 0)
+                {
+                    Console.WriteLine(factor + " is a factor of " + num);
+                }
+            }
+        }
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter a number for your choice:");
@@ -102,6 +115,7 @@ namespace Basic_Core_Program
             Console.WriteLine("2 for leap year");
             Console.WriteLine("3 for power of tow");
             Console.WriteLine("4 for Harmonic number");
+            Console.WriteLine("5 for Factor");
             int Problem = Convert.ToInt32(Console.ReadLine());
             basicCoreProgram basicCoreProgram = new basicCoreProgram();
             switch (Problem)
@@ -117,6 +131,9 @@ namespace Basic_Core_Program
                     break;
                 case 4:
                     basicCoreProgram.HarmonicNumber();
+                    break;
+                case 5:
+                    basicCoreProgram.Factor();
                     break;
                 default:
                     Console.WriteLine("You enter invalid number");
