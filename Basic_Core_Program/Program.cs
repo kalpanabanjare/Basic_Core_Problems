@@ -38,10 +38,37 @@ namespace Basic_Core_Program
             Console.WriteLine("Persentage of hear vs tail:" + Head_Persent);
             Console.WriteLine("Persentage of tail vs head:" + Tail_Persent);
         }
+
+        public void LeapYear()
+        {
+            Console.WriteLine("Enter Year :");
+            int Year = int.Parse(Console.ReadLine());
+            {
+                if (Year >= 1000 && Year <= 9999)
+                {
+                    Console.WriteLine("Valid input");
+                    if (((Year % 4 == 0) && (Year % 100 != 0)) || (Year % 400 == 0)) // to check the comdition
+                    {
+                        Console.WriteLine("{0} is a leap Year", Year);
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0} is not a leap Year", Year);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input");
+                }
+            }
+            return Year;
+        }
+    
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter a number for your choice:");
             Console.WriteLine("1 for flip coin presentage");
+            Console.WriteLine("2 for leap year");
             int Problem = Convert.ToInt32(Console.ReadLine());
             basicCoreProgram basicCoreProgram = new basicCoreProgram();
             switch (Problem)
@@ -49,11 +76,13 @@ namespace Basic_Core_Program
                 case 1:
                     basicCoreProgram.flipCoin();
                     break;
+                case 2:
+                    basicCoreProgram.LeapYear();
+                    break;
                 default:
                     Console.WriteLine("You enter invalid number");
                     break;
             }
-
         }
     }
 }
